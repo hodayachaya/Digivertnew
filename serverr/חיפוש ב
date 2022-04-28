@@ -1,0 +1,40 @@
+﻿Image processing algorithm
+https://github.com/search?l=C%23&q=Image+processing+algorithm&type=Repositories
+מציאת מרחק 
+https://reference.wolfram.com/language/workflow/GetCoordinatesFromAnImage.html
+https://stackoverflow.com/questions/13893517/extract-a-portion-of-an-image-in-net/13893577
+מציאת קורדיאנטות x,y
+* https://www.codeproject.com/Questions/512493/XplusYplusCoordinatesplusforplusBitmapData
+**https://stackoverflow.com/questions/33110913/get-vertices-edges-from-bmp-or-svg-c
+להעלות את הSQL של הפרוייקט לכאן כדי שאני יחבר בבית
+AutoCAD 2D Drawing using C# with AutoCAD COM API??
+*https://www.codeproject.com/Articles/840798/AutoCAD-D-Drawing-using-Csharp-with-AutoCAD-COM-AP
+*https://stackoverflow.com/questions/8376787/writing-to-dxf-or-dwg-format
+*https://stackoverflow.com/questions/31449713/objectarx-read-write-dwg-files-that-are-not-currently-opened-in-autocad
+*https://www.codeproject.com/Articles/840798/AutoCAD-D-Drawing-using-Csharp-with-AutoCAD-COM-AP
+להכניס למשתנה את* higet הגובה של התמונה image.hight
+ולפי זה לעבור עם הלולאה
+int HEIGHT =image.hight;
+int WIDTH = image.width;
+
+// get the jpg image
+Bitmap bitmap;
+using(Stream bmpStream = System.IO.File.Open(fileName, System.IO.FileMode.Open )){
+     Image image = Image.FromStream(bmpStream);
+     bitmap = new Bitmap(image);
+}
+
+for (int x = 0; x < HEIGHT; x++){
+  for (int y = 0; y < WIDTH; y++){
+    Color pixelColor = bitmap.GetPixel(x, y);
+    // check if it's black or a shade of black
+    // e.g. if it belongs to an array of colors..etc
+    // if so, record the coordinates (x,y)
+  }
+}
+*********************************************
+https://stackoverflow.com/questions/10127871/how-can-i-read-image-pixels-values-as-rgb-into-2d-array
+*******************************************
+*https://stackoverflow.com/questions/20778227/get-64bpp-image-color
+***************************************************************
+https://www.codegrepper.com/code-examples/csharp/c%23+get+pixel+color+from+image

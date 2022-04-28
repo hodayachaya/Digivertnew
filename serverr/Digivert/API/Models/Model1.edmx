@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="file">
+          <Key>
+            <PropertyRef Name="Idfile" />
+          </Key>
+          <Property Name="Idfile" Type="bigint" Nullable="false" />
+          <Property Name="idproject" Type="varchar" MaxLength="50" />
+          <Property Name="srcimagetarget" Type="varchar" MaxLength="50" />
+          <Property Name="newimagetarget" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="idproject" />
+          </Key>
+          <Property Name="idproject" Type="int" Nullable="false" />
+          <Property Name="iduser" Type="int" />
+        </EntityType>
+        <EntityType Name="Table1">
+          <Key>
+            <PropertyRef Name="idcode" />
+          </Key>
+          <Property Name="idcode" Type="bigint" Nullable="false" />
+          <Property Name="imagetarget" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="iduser" />
+          </Key>
+          <Property Name="iduser" Type="int" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_file_file">
+          <End Role="file" Type="Self.file" Multiplicity="1" />
+          <End Role="file1" Type="Self.file" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="file">
+              <PropertyRef Name="Idfile" />
+            </Principal>
+            <Dependent Role="file1">
+              <PropertyRef Name="Idfile" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_project">
+          <End Role="project" Type="Self.project" Multiplicity="1" />
+          <End Role="project1" Type="Self.project" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="idproject" />
+            </Principal>
+            <Dependent Role="project1">
+              <PropertyRef Name="idproject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_users_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="users1" Type="Self.users" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="iduser" />
+            </Principal>
+            <Dependent Role="users1">
+              <PropertyRef Name="iduser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="file" EntityType="Self.file" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="project" EntityType="Self.project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table1" EntityType="Self.Table1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_file_file" Association="Self.FK_file_file">
+            <End Role="file" EntitySet="file" />
+            <End Role="file1" EntitySet="file" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_project" Association="Self.FK_project_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="project1" EntitySet="project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_users_users" Association="Self.FK_users_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="users1" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="file">
+          <Key>
+            <PropertyRef Name="Idfile" />
+          </Key>
+          <Property Name="Idfile" Type="Int64" Nullable="false" />
+          <Property Name="idproject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="srcimagetarget" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="newimagetarget" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="file1" Relationship="Self.FK_file_file" FromRole="file" ToRole="file1" />
+          <NavigationProperty Name="file2" Relationship="Self.FK_file_file" FromRole="file1" ToRole="file" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="idproject" />
+          </Key>
+          <Property Name="idproject" Type="Int32" Nullable="false" />
+          <Property Name="iduser" Type="Int32" />
+          <NavigationProperty Name="project1" Relationship="Self.FK_project_project" FromRole="project" ToRole="project1" />
+          <NavigationProperty Name="project2" Relationship="Self.FK_project_project" FromRole="project1" ToRole="project" />
+        </EntityType>
+        <EntityType Name="Table1">
+          <Key>
+            <PropertyRef Name="idcode" />
+          </Key>
+          <Property Name="idcode" Type="Int64" Nullable="false" />
+          <Property Name="imagetarget" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="iduser" />
+          </Key>
+          <Property Name="iduser" Type="Int32" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="users1" Relationship="Self.FK_users_users" FromRole="users" ToRole="users1" />
+          <NavigationProperty Name="users2" Relationship="Self.FK_users_users" FromRole="users1" ToRole="users" />
+        </EntityType>
+        <Association Name="FK_file_file">
+          <End Role="file" Type="Self.file" Multiplicity="1" />
+          <End Role="file1" Type="Self.file" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="file">
+              <PropertyRef Name="Idfile" />
+            </Principal>
+            <Dependent Role="file1">
+              <PropertyRef Name="Idfile" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_project">
+          <End Role="project" Type="Self.project" Multiplicity="1" />
+          <End Role="project1" Type="Self.project" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="idproject" />
+            </Principal>
+            <Dependent Role="project1">
+              <PropertyRef Name="idproject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_users_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="users1" Type="Self.users" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="iduser" />
+            </Principal>
+            <Dependent Role="users1">
+              <PropertyRef Name="iduser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="file" EntityType="Self.file" />
+          <EntitySet Name="project" EntityType="Self.project" />
+          <EntitySet Name="Table1" EntityType="Self.Table1" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="FK_file_file" Association="Self.FK_file_file">
+            <End Role="file" EntitySet="file" />
+            <End Role="file1" EntitySet="file" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_project" Association="Self.FK_project_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="project1" EntitySet="project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_users_users" Association="Self.FK_users_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="users1" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="file">
+            <EntityTypeMapping TypeName="DBModel.file">
+              <MappingFragment StoreEntitySet="file">
+                <ScalarProperty Name="Idfile" ColumnName="Idfile" />
+                <ScalarProperty Name="idproject" ColumnName="idproject" />
+                <ScalarProperty Name="srcimagetarget" ColumnName="srcimagetarget" />
+                <ScalarProperty Name="newimagetarget" ColumnName="newimagetarget" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="project">
+            <EntityTypeMapping TypeName="DBModel.project">
+              <MappingFragment StoreEntitySet="project">
+                <ScalarProperty Name="idproject" ColumnName="idproject" />
+                <ScalarProperty Name="iduser" ColumnName="iduser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Table1">
+            <EntityTypeMapping TypeName="DBModel.Table1">
+              <MappingFragment StoreEntitySet="Table1">
+                <ScalarProperty Name="idcode" ColumnName="idcode" />
+                <ScalarProperty Name="imagetarget" ColumnName="imagetarget" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="DBModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="iduser" ColumnName="iduser" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

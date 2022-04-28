@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+    <EntitySetMapping Name="file">
+      <EntityTypeMapping TypeName="DBModel.file">
+        <MappingFragment StoreEntitySet="file">
+          <ScalarProperty Name="Idfile" ColumnName="Idfile" />
+          <ScalarProperty Name="idproject" ColumnName="idproject" />
+          <ScalarProperty Name="srcimagetarget" ColumnName="srcimagetarget" />
+          <ScalarProperty Name="newimagetarget" ColumnName="newimagetarget" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project">
+      <EntityTypeMapping TypeName="DBModel.project">
+        <MappingFragment StoreEntitySet="project">
+          <ScalarProperty Name="idproject" ColumnName="idproject" />
+          <ScalarProperty Name="iduser" ColumnName="iduser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table1">
+      <EntityTypeMapping TypeName="DBModel.Table1">
+        <MappingFragment StoreEntitySet="Table1">
+          <ScalarProperty Name="idcode" ColumnName="idcode" />
+          <ScalarProperty Name="imagetarget" ColumnName="imagetarget" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="DBModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="iduser" ColumnName="iduser" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="file">
+    <Key>
+      <PropertyRef Name="Idfile" />
+    </Key>
+    <Property Name="Idfile" Type="bigint" Nullable="false" />
+    <Property Name="idproject" Type="varchar" MaxLength="50" />
+    <Property Name="srcimagetarget" Type="varchar" MaxLength="50" />
+    <Property Name="newimagetarget" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="project">
+    <Key>
+      <PropertyRef Name="idproject" />
+    </Key>
+    <Property Name="idproject" Type="int" Nullable="false" />
+    <Property Name="iduser" Type="int" />
+  </EntityType>
+  <EntityType Name="Table1">
+    <Key>
+      <PropertyRef Name="idcode" />
+    </Key>
+    <Property Name="idcode" Type="bigint" Nullable="false" />
+    <Property Name="imagetarget" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="iduser" />
+    </Key>
+    <Property Name="iduser" Type="int" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="50" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_file_file">
+    <End Role="file" Type="Self.file" Multiplicity="1" />
+    <End Role="file1" Type="Self.file" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="file">
+        <PropertyRef Name="Idfile" />
+      </Principal>
+      <Dependent Role="file1">
+        <PropertyRef Name="Idfile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_project">
+    <End Role="project" Type="Self.project" Multiplicity="1" />
+    <End Role="project1" Type="Self.project" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="project">
+        <PropertyRef Name="idproject" />
+      </Principal>
+      <Dependent Role="project1">
+        <PropertyRef Name="idproject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_users">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="users1" Type="Self.users" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="iduser" />
+      </Principal>
+      <Dependent Role="users1">
+        <PropertyRef Name="iduser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="file" EntityType="Self.file" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project" EntityType="Self.project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table1" EntityType="Self.Table1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_file_file" Association="Self.FK_file_file">
+      <End Role="file" EntitySet="file" />
+      <End Role="file1" EntitySet="file" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_project" Association="Self.FK_project_project">
+      <End Role="project" EntitySet="project" />
+      <End Role="project1" EntitySet="project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_users" Association="Self.FK_users_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="users1" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

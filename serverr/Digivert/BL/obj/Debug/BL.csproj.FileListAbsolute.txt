@@ -1,0 +1,2 @@
+C:\Users\נטלי\Desktop\Digivert\server\Digivert\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\נטלי\Desktop\Digivert\server\Digivert\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache

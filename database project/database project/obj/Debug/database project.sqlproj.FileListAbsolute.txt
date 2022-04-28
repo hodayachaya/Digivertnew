@@ -1,0 +1,6 @@
+C:\Users\נטלי\source\repos\database project\database project\bin\Debug\database project.dacpac
+C:\Users\נטלי\source\repos\database project\database project\bin\Debug\database_project.dll
+C:\Users\נטלי\source\repos\database project\database project\bin\Debug\database_project.pdb
+C:\Users\נטלי\source\repos\database project\database project\obj\Debug\database project.sqlprojAssemblyReference.cache
+C:\Users\נטלי\source\repos\database project\database project\obj\Debug\database_project.dll
+C:\Users\נטלי\source\repos\database project\database project\obj\Debug\database_project.pdb

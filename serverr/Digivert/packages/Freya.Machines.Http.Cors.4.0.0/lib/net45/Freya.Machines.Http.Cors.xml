@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Freya.Machines.Http.Cors</name></assembly>
+<members>
+<member name="M:Freya.Machines.Http.Cors.Syntax.HttpMachineBuilder.CorsMaxAge``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Specifies the maximum timespan in seconds that a client can cache
+ CORS header data before re-validating.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Cors.Syntax.HttpMachineBuilder.CorsSupportsCredentials``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Specifies whether the CORS request is allowed to use the user&apos;s
+ credentials of the server
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Cors.Syntax.HttpMachineBuilder.CorsExposedHeaders``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Specifies the (list of) headers that a browser is allowed to access.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Cors.Syntax.HttpMachineBuilder.CorsHeaders``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Specifies the (list of) valid CORS headers.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Cors.Syntax.HttpMachineBuilder.CorsMethods``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Specifies the (list of) valid CORS methods, if different from the
+ methods specified with `methods`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Cors.Syntax.HttpMachineBuilder.CorsOrigins``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Specifies the (list of) valid CORS origins.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Cors.Syntax.HttpMachineBuilder.CorsEnabled``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines whether the CORS components are enabled for the current
+ request.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Cors.Syntax.HttpMachineBuilder.Cors(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine)">
+<summary>
+ Includes the CORS components in the Freya HTTP machine.
+</summary>
+</member>
+</members>
+</doc>

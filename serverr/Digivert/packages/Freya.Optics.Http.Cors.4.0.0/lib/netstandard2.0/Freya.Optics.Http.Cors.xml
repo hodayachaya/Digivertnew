@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Freya.Optics.Http.Cors</name></assembly>
+<members>
+<member name="P:Freya.Optics.Http.Cors.Request.Headers.origin_">
+<summary>
+ A lens from State -&gt; Origin option, accessing the optional Origin
+ header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Cors.Request.Headers.accessControlRequestMethod_">
+<summary>
+ A lens from State -&gt; AccessControlRequestMethod option, accessing
+ the optional Access-Control-Request-Method header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Cors.Request.Headers.accessControlRequestHeaders_">
+<summary>
+ A lens from State -&gt; AccessControlRequestHeaders option, accessing
+ the optional Access-Control-Request-Headers header.
+</summary>
+</member>
+<member name="T:Freya.Optics.Http.Cors.Request.Headers">
+<summary>
+ Optics for request headers, usually given as lenses from
+ State -&gt; &apos;a option, where &apos;a is a strongly typed representation of an
+ optional header. Headers may be added and removed by using the common
+ Freya optic functionality with Option values.
+</summary>
+</member>
+<member name="T:Freya.Optics.Http.Cors.Request">
+<summary>
+ Optics for working with individual elements of the request as part of the
+ Freya state, including access to typed data using the Freya Types libraries
+ where implemented.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Cors.Response.Headers.accessControlMaxAge_">
+<summary>
+ A lens from State -&gt; AccessControlMaxAge option, accessing the
+ optional Access-Control-Max-Age header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Cors.Response.Headers.accessControlExposeHeaders_">
+<summary>
+ A lens from State -&gt; AccessControlExposeHeaders option, accessing
+ the optional Access-Control-Expose-Headers header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Cors.Response.Headers.accessControlAllowOrigin_">
+<summary>
+ A lens from State -&gt; AccessControlAllowOrigin option, accessing
+ the optional Access-Control-Allow-Origin header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Cors.Response.Headers.accessControlAllowMethods_">
+<summary>
+ A lens from State -&gt; AccessControlAllowMethods option, accessing
+ the optional Access-Control-Allow-Methods header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Cors.Response.Headers.accessControlAllowHeaders_">
+<summary>
+ A lens from State -&gt; AccessControlAllowHeaders option, accessing
+ the optional Access-Control-Allow-Headers header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Cors.Response.Headers.accessControlAllowCredentials_">
+<summary>
+ A lens from State -&gt; AccessControlAllowCredentials option,
+ accessing the optional Access-Control-Allow-Credentials header.
+</summary>
+</member>
+<member name="T:Freya.Optics.Http.Cors.Response.Headers">
+<summary>
+ Optics for response headers, usually given as lenses from
+ State -&gt; &apos;a option, where &apos;a is a strongly typed representation of an
+ optional header. Headers may be added and removed by using the common
+ Freya optic functionality with Option values.
+</summary>
+</member>
+<member name="T:Freya.Optics.Http.Cors.Response">
+<summary>
+ Optics for working with individual elements of the response as part of the
+ Freya state, including access to typed data using the Freya Types libraries
+ where implemented.
+</summary>
+</member>
+</members>
+</doc>

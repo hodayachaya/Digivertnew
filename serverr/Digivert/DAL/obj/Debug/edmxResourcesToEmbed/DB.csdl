@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="file">
+    <Key>
+      <PropertyRef Name="Idfile" />
+    </Key>
+    <Property Name="Idfile" Type="Int64" Nullable="false" />
+    <Property Name="idproject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="srcimagetarget" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="newimagetarget" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="file1" Relationship="Self.FK_file_file" FromRole="file" ToRole="file1" />
+    <NavigationProperty Name="file2" Relationship="Self.FK_file_file" FromRole="file1" ToRole="file" />
+  </EntityType>
+  <EntityType Name="project">
+    <Key>
+      <PropertyRef Name="idproject" />
+    </Key>
+    <Property Name="idproject" Type="Int32" Nullable="false" />
+    <Property Name="iduser" Type="Int32" />
+    <NavigationProperty Name="project1" Relationship="Self.FK_project_project" FromRole="project" ToRole="project1" />
+    <NavigationProperty Name="project2" Relationship="Self.FK_project_project" FromRole="project1" ToRole="project" />
+  </EntityType>
+  <EntityType Name="Table1">
+    <Key>
+      <PropertyRef Name="idcode" />
+    </Key>
+    <Property Name="idcode" Type="Int64" Nullable="false" />
+    <Property Name="imagetarget" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="iduser" />
+    </Key>
+    <Property Name="iduser" Type="Int32" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="users1" Relationship="Self.FK_users_users" FromRole="users" ToRole="users1" />
+    <NavigationProperty Name="user1" Relationship="Self.FK_users_users" FromRole="users1" ToRole="users" />
+  </EntityType>
+  <Association Name="FK_file_file">
+    <End Role="file" Type="Self.file" Multiplicity="1" />
+    <End Role="file1" Type="Self.file" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="file">
+        <PropertyRef Name="Idfile" />
+      </Principal>
+      <Dependent Role="file1">
+        <PropertyRef Name="Idfile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_project">
+    <End Role="project" Type="Self.project" Multiplicity="1" />
+    <End Role="project1" Type="Self.project" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="project">
+        <PropertyRef Name="idproject" />
+      </Principal>
+      <Dependent Role="project1">
+        <PropertyRef Name="idproject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_users">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="users1" Type="Self.user" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="iduser" />
+      </Principal>
+      <Dependent Role="users1">
+        <PropertyRef Name="iduser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="files" EntityType="Self.file" />
+    <EntitySet Name="projects" EntityType="Self.project" />
+    <EntitySet Name="Table1" EntityType="Self.Table1" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <AssociationSet Name="FK_file_file" Association="Self.FK_file_file">
+      <End Role="file" EntitySet="files" />
+      <End Role="file1" EntitySet="files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_project" Association="Self.FK_project_project">
+      <End Role="project" EntitySet="projects" />
+      <End Role="project1" EntitySet="projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_users" Association="Self.FK_users_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="users1" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
