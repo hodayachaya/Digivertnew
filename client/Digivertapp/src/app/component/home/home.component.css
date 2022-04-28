@@ -1,0 +1,57 @@
+.hometitle {
+
+    text-align: center;
+    color: rgb(195, 25, 25);
+    font-size: xx-large;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+   
+    width: 33.33%;
+   
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+
+    display: table;
+}
+.ul{
+    width: 50%;
+}
+.li{
+    content: "";
+
+    display: table;
+
+}
+.backgroundimg{ background-image: url('http://127.0.0.1:8885/client/Lovepik_com-500531419-desk-overlook-map.jpg');
+    height: 500px; /* You must set a specified height */
+    background-position:center ; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+   
+    background-attachment: local;
+    background-size: 100% 100%; 
+
+}
+.gridopt{
+  background-color: rgba(245, 245, 245, 0.685);
+    border-radius: 15px;
+    width: 400px;;
+    height: 400px;
+   
+}
