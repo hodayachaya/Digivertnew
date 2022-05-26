@@ -39,8 +39,9 @@
     display: table;
 
 }
-.backgroundimg{ background-image: url('http://127.0.0.1:8885/client/Lovepik_com-500531419-desk-overlook-map.jpg');
-    height: 500px; /* You must set a specified height */
+.backgroundimg{ 
+    background-image: url("assets/background.png");
+    height: 500px; /* You must set a specified sheight */
     background-position:center ; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
    
